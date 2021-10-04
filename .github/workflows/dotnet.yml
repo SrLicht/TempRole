@@ -1,10 +1,10 @@
-name: TempRoles CI
+name: Build & Release
 # No se que significa exactamente CI, asi que Ok.
 
 on:
   push:
     branches:
-      - "master"
+      - "main"
   workflow_dispatch:
 
 env:
@@ -50,3 +50,11 @@ jobs:
       with:
         name: Build Results
         path: TempRoles/bin/Debug
+    - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: true
+          files: |
+            TempRoles/bin/Debug/TempRoles.dll
