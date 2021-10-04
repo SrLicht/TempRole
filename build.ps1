@@ -4,13 +4,10 @@ param (
     [Switch]$BuildNuGet
 )
 
-cd CerberusProjects
+cd TempRoles
 
 $Projects = @(
-    "Tweaks",
-    "Gamemodes",
-	"Better-079",
-	"SCP-Swap"
+   "TempRoles"
 )
 
 function Execute {
