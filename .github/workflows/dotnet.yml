@@ -50,9 +50,10 @@ jobs:
       with:
         name: Build Results
         path: TempRoles/bin/Debug
-    - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
+        
+    - name: GH Release
+      uses: softprops/action-gh-release@v0.1.13
+      with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           draft: true
