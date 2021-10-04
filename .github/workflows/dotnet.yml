@@ -1,4 +1,4 @@
-name: Build & Release
+name: Build and Release
 # No se que significa exactamente CI, asi que Ok.
 
 on:
