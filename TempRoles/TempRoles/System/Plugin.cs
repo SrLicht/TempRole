@@ -25,6 +25,11 @@ namespace TempRoles.System
         /// <inheritdoc/>
         public override string Name => "TempRoles";
 
+        /// <summary>
+        /// Lista de Handlers.
+        /// </summary>
+        private List<Base.Handler> handlers;
+
         /// <inheritdoc/>
         public override string Prefix => "temp_roles";
 
@@ -41,11 +46,24 @@ namespace TempRoles.System
 
         public override void OnEnabled()
         {
+            Instance = this;
+            handlers = new List<Base.Handler>() { new Handlers.MainHandler() };
+
+            foreach (var item in handlers)
+            {
+                item.Start();
+            }
             base.OnEnabled();
         }
 
         public override void OnDisabled()
         {
+            foreach (var item in handlers)
+            {
+                item.Stop();
+            }
+            Instance = null;
+
             base.OnDisabled();
         }
     }

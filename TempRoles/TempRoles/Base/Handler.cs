@@ -10,7 +10,7 @@ namespace TempRoles.Base
     /// <summary>
     /// Base API for CerberusTweaks allow create handlers in a "easily" way.
     /// </summary>
-    public abstract class Handlers
+    public abstract class Handler
     {
         /// <summary>
         /// Plugin Instance

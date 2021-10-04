@@ -9,7 +9,7 @@ using TempRoles.System;
 
 namespace TempRoles.Handlers
 {
-    public class MainHandler : Base.Handlers
+    public class MainHandler : Base.Handler
     {
         public override void Start()
         {
