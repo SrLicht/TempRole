@@ -1,4 +1,4 @@
-name: Build and Release
+name: Build
 # No se que significa exactamente CI, asi que Ok.
 
 on:
@@ -50,15 +50,4 @@ jobs:
       with:
         name: Build Results
         path: TempRoles/bin/Debug
-        
-    - name: GH Release
-      uses: softprops/action-gh-release@v0.1.13
-      with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: true
-          files: |
-            TempRoles/bin/Debug/TempRoles.dll
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             
