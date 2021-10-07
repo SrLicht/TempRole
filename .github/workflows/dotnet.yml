@@ -32,7 +32,6 @@ jobs:
       run: |
         Invoke-WebRequest -Uri ${{ env.EXILED_REFERENCES_URL }} -OutFile ${{ github.workspace }}/Dev.zip
         Expand-Archive -Path Dev.zip -DestinationPath ${{ env.EXILED_REFERENCES_PATH }}
-        Invoke-WebRequest -Uri "https://github.com/SCPStats/Plugin/releases/download/1.4.1/SCPStats.dll" -OutFile ${{ env.EXILED_REFERENCES_PATH }}/SCPStats.dll
 
     - name: Build
       env:
@@ -48,4 +47,3 @@ jobs:
       with:
         name: Build Results
         path: TempRoles/bin/Debug
-            
