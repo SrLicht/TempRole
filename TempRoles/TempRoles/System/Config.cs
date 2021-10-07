@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Exiled.API.Features;
 using Exiled.API.Interfaces;
+using TempRoles.System.Configs;
 
 namespace TempRoles.System
 {
@@ -17,5 +18,8 @@ namespace TempRoles.System
 
         [Description("Cualquier rol que pongas aqui, tendra slot reservado.")]
         public List<string> ReservedSlotRoles { get; set; } = new List<string>() { "owner" };
+
+        [Description("Configuracion del comando")]
+        public CommandConfig CommandConfig { get; set; } = new CommandConfig();
     }
 }
